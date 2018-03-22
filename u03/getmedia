@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+##uznal jsem za vhodne, aby soubory v sobe nemeli tecku a mezeru. Takove delaji jen bordel.
+##potom jsem nepocital se specialnimi znaky jako je carka ci jiny paskvil. Program lze rozsirit,
+##aby to zvladal 
+
+
+if [ "$1" == "-i"  ]; then 
+
+            cat $2 | grep -o [a-zA-Z0-9]*.png
+            cat $2 | grep -o [a-zA-Z0-9]*.jpg
+            cat $2 | grep -o [a-zA-Z0-9]*.svg
+
+elif [ "$1" == "-s" ] ; then 
+              
+            cat $2 | grep -o [a-zA-Z0-9]*.wav
+            cat $2 | grep -o [a-zA-Z0-9]*.mp3
+            cat $2 | grep -o [a-zA-Z0-9]*.ogg
+else                 
+            cat $1 | grep -o [a-zA-Z0-9]*.png
+            cat $1 | grep -o [a-zA-Z0-9]*.jpg
+            cat $1 | grep -o [a-zA-Z0-9]*.svg
+            cat $1 | grep -o [a-zA-Z0-9]*.wav
+            cat $1 | grep -o [a-zA-Z0-9]*.mp3
+            cat $1 | grep -o [a-zA-Z0-9]*.ogg
+fi;
