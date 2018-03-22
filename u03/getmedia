@@ -9,17 +9,17 @@
 
 if [ "$1" == "-i"  ]; then 
 
-            cat $2 | egrep -o [a-zA-Z0-9./]*.png 
-            cat $2 | egrep -o [a-zA-Z0-9./]*.jpg
-            cat $2 | egrep -o [a-zA-Z0-9./]*.svg
+            cat $2 | egrep -o [a-zA-Z0-9./:]*.png 
+            cat $2 | egrep -o [a-zA-Z0-9./:]*.jpg
+            cat $2 | egrep -o [a-zA-Z0-9./:]*.svg
    ##         cat $2 | egrep -o '. '      
                    ##  [a-zA-Z0-9./+-]*.png'
 
 elif [ "$1" == "-s" ] ; then 
               
-            cat $2 | grep -o [a-zA-Z0-9./]*.wav
-            cat $2 | grep -o [a-zA-Z0-9./]*.mp3
-            cat $2 | grep -o [a-zA-Z0-9./]*.ogg
+            cat $2 | grep -o [a-zA-Z0-9./:]*.wav
+            cat $2 | grep -o [a-zA-Z0-9./:]*.mp3
+            cat $2 | grep -o [a-zA-Z0-9./:]*.ogg
 else                 
             cat $1 | grep -o [a-zA-Z0-9./:]*.png
             cat $1 | grep -o [a-zA-Z0-9./:]*.jpg
