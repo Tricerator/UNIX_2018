@@ -2,8 +2,9 @@
 
 
 
-##uznal jsem za vhodne, aby soubory v sobe nemeli mezeru. Takove delaji jen bordel.
-##dale predpokladam, ze adresa neni ve tvaru hhhhhhhhhhhhhwww.johan.cz, prototze na zacatku cesty muze by cokoliv... http, ftp atd... Libovolny formular
+##uznal jsem za vhodne, aby soubory v sobe nemely mezeru. Takove delaji jen bordel
+##dale predpokladam, ze adresa neni ve tvaru hhhhhhhhhhhhhwww.johan.cz, prototze na zacatku cesty 
+##muze byt cokoliv... http, ftp atd... Libovolny formular
 
 
 if [ "$1" == --help ]; then
@@ -11,8 +12,8 @@ if [ "$1" == --help ]; then
       echo "This program will grep url media from HTML."
       echo " "
   
-echo "Using: "
- echo "getmedia [-arg] [source]"
+      echo "Using: "
+      echo "getmedia [-arg] [source]"
 
       echo "  "
       echo " Arguments: "
@@ -28,9 +29,7 @@ elif [ "$1" == "-i"  ]; then
             cat $2 | egrep -o [a-zA-Z0-9./:]*.png 
             cat $2 | egrep -o [a-zA-Z0-9./:]*.jpg
             cat $2 | egrep -o [a-zA-Z0-9./:]*.svg
-   ##         cat $2 | egrep -o '. '      
-                   ##  [a-zA-Z0-9./+-]*.png'
-
+  
 elif [ "$1" == "-s" ] ; then 
               
             cat $2 | grep -o [a-zA-Z0-9./:]*.wav
