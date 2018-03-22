@@ -6,8 +6,24 @@
 ##dale predpokladam, ze adresa neni ve tvaru hhhhhhhhhhhhhwww.johan.cz, prototze na zacatku cesty muze by cokoliv... http, ftp atd... Libovolny formular
 
 
+if [ "$1" == --help ]; then
 
-if [ "$1" == "-i"  ]; then 
+      echo "This program will grep url media from HTML."
+      echo " "
+  
+echo "Using: "
+ echo "getmedia [-arg] [source]"
+
+      echo "  "
+      echo " Arguments: "
+      echo " -s for sound"
+      echo " -i for images"
+      echo " --help for help"
+      echo " Created by Ondrej Michalek"
+
+
+
+elif [ "$1" == "-i"  ]; then 
 
             cat $2 | egrep -o [a-zA-Z0-9./:]*.png 
             cat $2 | egrep -o [a-zA-Z0-9./:]*.jpg
