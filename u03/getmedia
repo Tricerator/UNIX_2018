@@ -1,27 +1,30 @@
 #!/bin/bash
 
 
-##uznal jsem za vhodne, aby soubory v sobe nemeli tecku a mezeru. Takove delaji jen bordel.
-##potom jsem nepocital se specialnimi znaky jako je carka ci jiny paskvil. Program lze rozsirit,
-##aby to zvladal 
+
+##uznal jsem za vhodne, aby soubory v sobe nemeli mezeru. Takove delaji jen bordel.
+##dale predpokladam, ze adresa neni ve tvaru hhhhhhhhhhhhhwww.johan.cz, prototze na zacatku cesty muze by cokoliv... http, ftp atd... Libovolny formular
+
 
 
 if [ "$1" == "-i"  ]; then 
 
-            cat $2 | grep -o [a-zA-Z0-9]*.png
-            cat $2 | grep -o [a-zA-Z0-9]*.jpg
-            cat $2 | grep -o [a-zA-Z0-9]*.svg
+            cat $2 | egrep -o [a-zA-Z0-9./]*.png 
+            cat $2 | egrep -o [a-zA-Z0-9./]*.jpg
+            cat $2 | egrep -o [a-zA-Z0-9./]*.svg
+   ##         cat $2 | egrep -o '. '      
+                   ##  [a-zA-Z0-9./+-]*.png'
 
 elif [ "$1" == "-s" ] ; then 
               
-            cat $2 | grep -o [a-zA-Z0-9]*.wav
-            cat $2 | grep -o [a-zA-Z0-9]*.mp3
-            cat $2 | grep -o [a-zA-Z0-9]*.ogg
+            cat $2 | grep -o [a-zA-Z0-9./]*.wav
+            cat $2 | grep -o [a-zA-Z0-9./]*.mp3
+            cat $2 | grep -o [a-zA-Z0-9./]*.ogg
 else                 
-            cat $1 | grep -o [a-zA-Z0-9]*.png
-            cat $1 | grep -o [a-zA-Z0-9]*.jpg
-            cat $1 | grep -o [a-zA-Z0-9]*.svg
-            cat $1 | grep -o [a-zA-Z0-9]*.wav
-            cat $1 | grep -o [a-zA-Z0-9]*.mp3
-            cat $1 | grep -o [a-zA-Z0-9]*.ogg
+            cat $1 | grep -o [a-zA-Z0-9./:]*.png
+            cat $1 | grep -o [a-zA-Z0-9./:]*.jpg
+            cat $1 | grep -o [a-zA-Z0-9./:]*.svg
+            cat $1 | grep -o [a-zA-Z0-9./:]*.wav
+            cat $1 | grep -o [a-zA-Z0-9./:]*.mp3
+            cat $1 | grep -o [a-zA-Z0-9./:]*.ogg
 fi;
