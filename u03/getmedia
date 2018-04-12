@@ -26,20 +26,34 @@ if [ "$1" == --help ]; then
 
 elif [ "$1" == "-i"  ]; then 
 
-            cat $2 | egrep -o [a-zA-Z0-9./:]*.png 
-            cat $2 | egrep -o [a-zA-Z0-9./:]*.jpg
-            cat $2 | egrep -o [a-zA-Z0-9./:]*.svg
+            cat $2 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.png
+            cat $2 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.png
+            cat $2 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.jpg
+            cat $2 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.jpg
+            cat $2 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.svg
+            cat $2 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=_|!:,.;]*[-A-Za-z0-9+&@#/%=_|]'.svg
+           
   
 elif [ "$1" == "-s" ] ; then 
               
-            cat $2 | grep -o [a-zA-Z0-9./:]*.wav
-            cat $2 | grep -o [a-zA-Z0-9./:]*.mp3
-            cat $2 | grep -o [a-zA-Z0-9./:]*.ogg
+            cat $2 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.wav
+            cat $2 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.wav
+            cat $2 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.mp3
+            cat $2 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.mp3
+            cat $2 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.ogg
+            cat $2 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=_|!:,.;]*[-A-Za-z0-9+&@#/%=_|]'.ogg
+            
 else                 
-            cat $1 | grep -o [a-zA-Z0-9./:]*.png
-            cat $1 | grep -o [a-zA-Z0-9./:]*.jpg
-            cat $1 | grep -o [a-zA-Z0-9./:]*.svg
-            cat $1 | grep -o [a-zA-Z0-9./:]*.wav
-            cat $1 | grep -o [a-zA-Z0-9./:]*.mp3
-            cat $1 | grep -o [a-zA-Z0-9./:]*.ogg
+            cat $1 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.png
+            cat $1 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.png
+            cat $1 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.jpg
+            cat $1 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.jpg
+            cat $1 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.svg
+            cat $1 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=_|!:,.;]*[-A-Za-z0-9+&@#/%=_|]'.svg
+            cat $1 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.wav
+            cat $1 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.wav
+            cat $1 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.mp3
+            cat $1 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.mp3
+            cat $1 |  grep -oE '\b(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]'.ogg
+            cat $1 |  grep -oE 'www.[-A-Za-z0-9+&@#/%?=_|!:,.;]*[-A-Za-z0-9+&@#/%=_|]'.ogg
 fi;
