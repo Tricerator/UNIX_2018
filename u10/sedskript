@@ -1,0 +1,7 @@
+#!/bin/bash
+./plain2html plaintext | tr "\n" "  " | sed 's/  //g' | sed 's_<p>_</p><p>_g' | sed 's_</h1></p>_</h1>_g' | sed -e "\$a</p>"
+
+
+
+
+
