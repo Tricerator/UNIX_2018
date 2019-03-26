@@ -1,0 +1,7 @@
+#!/bin/sh
+
+fpc program.pas
+chmod program 744
+
+./program | grep " " | grep [0-9] | head -n 5
+rm program program.o
